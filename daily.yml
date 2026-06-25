@@ -1,0 +1,37 @@
+name: Daily forecast update
+
+on:
+  schedule:
+    - cron: "30 12 * * *"      # 12:30 UTC daily (NOT on the hour, to avoid peak delays)
+  workflow_dispatch:           # also lets you run it manually from the Actions tab
+
+permissions:
+  contents: write              # allow the job to commit the refreshed data file
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build today's forecast
+        run: |
+          python download_s2s_forecast.py
+          python convert_standardize_s2s.py
+          python community_forecast.py
+
+      - name: Publish refreshed data
+        run: |
+          git config user.name  "forecast-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add forecast_data.js
+          git diff --staged --quiet || git commit -m "Daily forecast update $(date -u +%F)"
+          git push

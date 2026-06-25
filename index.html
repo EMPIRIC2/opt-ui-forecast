@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rhode Island Weather Risk Outlook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#eaeef1; --surface:#ffffff; --ink:#16202b; --muted:#5d6c79;
+    --line:#dbe2e8; --brand:#0d4a5c; --brand-ink:#e9f6fa;
+    --low:#2f8f46; --mod:#f1c33b; --high:#ec7a2a; --vhigh:#d23b3b;
+    --low-ink:#ffffff; --mod-ink:#3a3000; --high-ink:#ffffff; --vhigh-ink:#ffffff;
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Inter,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:940px;margin:0 auto;padding:0 18px 64px}
+
+  header.top{background:var(--brand);color:var(--brand-ink);margin-bottom:22px}
+  .top .wrap{padding-top:26px;padding-bottom:26px}
+  .top h1{font-family:"Barlow Condensed";font-weight:700;text-transform:uppercase;
+    font-size:clamp(30px,6vw,52px);line-height:.96;margin:0;letter-spacing:.02em}
+  .top p.sub{margin:.5rem 0 0;font-size:clamp(15px,2.4vw,18px);color:#bfe0e8;max-width:46ch}
+  .updated{display:inline-block;margin-top:14px;font-size:13px;background:rgba(255,255,255,.13);
+    border:1px solid rgba(255,255,255,.25);padding:4px 11px;border-radius:999px}
+
+  .label{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+    margin:0 0 8px;font-weight:600}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+  .pill{font-family:"Barlow Condensed";font-size:18px;font-weight:600;cursor:pointer;
+    background:var(--surface);border:1px solid var(--line);color:var(--ink);
+    padding:7px 16px;border-radius:999px;transition:transform .08s,background .15s,border-color .15s}
+  .pill[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+  .seg{display:inline-flex;background:var(--surface);border:1px solid var(--line);
+    border-radius:999px;padding:4px;gap:4px;margin-bottom:8px;max-width:100%;flex-wrap:wrap}
+  .seg button{font-family:"Barlow Condensed";font-size:18px;font-weight:600;cursor:pointer;
+    border:0;background:transparent;color:var(--muted);padding:7px 16px;border-radius:999px}
+  .seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+  .seg.level button[aria-pressed="true"]{background:var(--brand)}
+  .note{font-size:13px;color:var(--muted);margin:0 0 22px}
+  .pill:focus-visible,.seg button:focus-visible,.tile:focus-visible{outline:3px solid #2f80ed;outline-offset:2px}
+
+  .head-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 22px;margin-bottom:22px;border-left:10px solid var(--line);display:flex;
+    gap:22px;align-items:center;flex-wrap:wrap}
+  .head-card .big{font-family:"Barlow Condensed";font-weight:700;font-size:clamp(34px,7vw,58px);line-height:.9}
+  .head-card .pct{font-family:"Barlow Condensed";font-weight:600;font-size:20px;color:var(--muted)}
+  .head-card .say{flex:1 1 280px;min-width:240px}
+  .head-card .say b{font-weight:600}
+  .def{color:var(--muted);font-size:14px;margin-top:4px}
+
+  .legend{display:flex;flex-wrap:wrap;gap:14px;margin:0 0 14px;font-size:13px;color:var(--muted)}
+  .legend span{display:inline-flex;align-items:center;gap:7px}
+  .sw{width:16px;height:16px;border-radius:5px;display:inline-block}
+
+  .week{margin-bottom:14px}
+  .week .wk{font-size:12px;color:var(--muted);margin:0 0 6px;letter-spacing:.04em}
+  .week .wk b{color:var(--ink);font-weight:600}
+  .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+  .tile{border:0;cursor:pointer;border-radius:11px;padding:9px 6px;text-align:center;
+    color:#fff;min-height:74px;display:flex;flex-direction:column;justify-content:center;
+    transition:transform .08s}
+  .tile .d{font-size:11px;font-weight:600;opacity:.92;text-transform:uppercase;letter-spacing:.03em}
+  .tile .v{font-family:"Barlow Condensed";font-weight:700;font-size:clamp(20px,4.4vw,28px);line-height:1}
+  .tile .r{font-size:10px;opacity:.92;margin-top:2px}
+  .tile.sel{box-shadow:0 0 0 3px var(--ink)}
+  .tile.Low{background:var(--low);color:var(--low-ink)}
+  .tile.Moderate{background:var(--mod);color:var(--mod-ink)}
+  .tile.High{background:var(--high);color:var(--high-ink)}
+  .tile.VeryHigh{background:var(--vhigh);color:var(--vhigh-ink)}
+  .empty{visibility:hidden}
+
+  .detail{background:var(--surface);border:1px dashed var(--line);border-radius:12px;
+    padding:14px 16px;margin-top:6px;font-size:15px;min-height:20px}
+  .detail b{font-weight:600}
+
+  details.exp{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:6px 18px;margin-top:24px}
+  details.exp summary{cursor:pointer;font-family:"Barlow Condensed";font-size:21px;font-weight:600;
+    padding:12px 0;list-style:none}
+  details.exp summary::-webkit-details-marker{display:none}
+  details.exp summary::before{content:"+ ";color:var(--brand);font-weight:700}
+  details.exp[open] summary::before{content:"\2013 "}
+  details.exp p{margin:.4rem 0 1rem;color:#33424f}
+  details.exp p b{color:var(--ink)}
+
+  footer{margin-top:30px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+  @media (max-width:560px){
+    .tile{min-height:64px;border-radius:9px;padding:7px 3px}
+    .grid{gap:5px}
+    .head-card{padding:16px}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .tile:hover{transform:translateY(-2px)}
+    .pill:hover{transform:translateY(-1px)}
+    .fade{animation:f .4s ease both}
+    @keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <h1>Rhode Island<br>Weather Risk Outlook</h1>
+    <p class="sub">Your county's chance of an extreme weather day over the next four weeks.</p>
+    <span class="updated" id="updated">Updated &mdash;</span>
+  </div>
+</header>
+
+<div class="wrap">
+  <p class="label">Choose your county</p>
+  <div class="pills" id="counties" role="group" aria-label="County"></div>
+
+  <p class="label">Type of extreme weather</p>
+  <div class="seg" id="events" role="group" aria-label="Event type"></div>
+
+  <p class="label">How extreme?</p>
+  <div class="seg level" id="levels" role="group" aria-label="Severity level"></div>
+  <p class="note" id="levelNote"></p>
+
+  <div class="head-card fade" id="headcard">
+    <div>
+      <div class="big" id="peakRisk">&mdash;</div>
+      <div class="pct" id="peakPct"></div>
+    </div>
+    <div class="say">
+      <div id="headSay">Pick a county to see the outlook.</div>
+      <div class="def" id="headDef"></div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span><i class="sw" style="background:var(--low)"></i>Low &middot; under 10%</span>
+    <span><i class="sw" style="background:var(--mod)"></i>Moderate &middot; 10&ndash;30%</span>
+    <span><i class="sw" style="background:var(--high)"></i>High &middot; 30&ndash;60%</span>
+    <span><i class="sw" style="background:var(--vhigh)"></i>Very High &middot; over 60%</span>
+  </div>
+
+  <div id="calendar"></div>
+  <div class="detail" id="detail">Tap any day to see its details.</div>
+
+  <details class="exp">
+    <summary>What do these numbers mean?</summary>
+    <p><b>The percentage is the share of forecast scenarios.</b> We run the forecast many times to capture different ways the next few weeks could unfold. The number is how many of those runs reach an extreme day. 40% means 4 in 10 runs.</p>
+    <p><b>"How extreme?" sets the bar.</b> Notable days are uncommon, Severe days are rare, and Extreme days are very rare &mdash; each bar comes from this county's own history. Rarer bars naturally show lower percentages.</p>
+    <p><b>"Extreme" is set by local history.</b> Each county's threshold comes from its own past 20 years, so an extreme day here means weather that has been uncommon for this place.</p>
+    <p><b>The forecast is most reliable this week.</b> Confidence fades the further out we look, which is why later weeks are labeled less certain. Use this as an early heads-up, not a guarantee.</p>
+  </details>
+
+  <footer>
+    <span id="source">Data source &mdash;</span><br>
+    Forecasts grow less certain further into the future. This outlook is for general awareness and is not an official warning.
+  </footer>
+</div>
+
+<script src="forecast_data.js"></script>
+<script>
+(function(){
+  "use strict";
+  var COUNTIES=["Bristol","Kent","Newport","Providence","Washington"];
+  var EVENTS=["Hot & Humid","Cold & Windy","Cold & Wet"];
+  var DEFS={
+    "Hot & Humid":"An unusually hot day that is also very humid.",
+    "Cold & Windy":"An unusually cold day with strong winds.",
+    "Cold & Wet":"An unusually cold day that is also very damp."
+  };
+  var DEFAULT_LEVELS=[{label:"Notable",note:"uncommon"},
+                      {label:"Severe",note:"rare"},
+                      {label:"Extreme",note:"very rare"}];
+  var RISKCLASS={"Low":"Low","Moderate":"Moderate","High":"High","Very High":"VeryHigh"};
+
+  function riskOf(p){ if(p<10)return"Low"; if(p<30)return"Moderate"; if(p<60)return"High"; return"Very High"; }
+
+  // ---- demo fallback so the page renders on its own ----
+  function makeDemo(){
+    var rows=[], today=new Date(); var seed=7;
+    var scale={Notable:1.0,Severe:0.4,Extreme:0.18};
+    function rnd(){ seed=(seed*9301+49297)%233280; return seed/233280; }
+    for(var ci=0;ci<COUNTIES.length;ci++)
+      for(var ei=0;ei<EVENTS.length;ei++)
+        for(var li=0;li<DEFAULT_LEVELS.length;li++){
+          var base=[55,22,30][ei]+ci*4;
+          for(var d=1;d<=28;d++){
+            var day=new Date(today); day.setDate(today.getDate()+d);
+            var wave=20*Math.sin((d+ci*3)/4)+(rnd()*26-13);
+            var c=Math.max(0,Math.min(95,Math.round((base+wave)*scale[DEFAULT_LEVELS[li].label])));
+            rows.push({county:COUNTIES[ci],event:EVENTS[ei],level:DEFAULT_LEVELS[li].label,
+              date:day.toISOString().slice(0,10),chance:c,risk:riskOf(c)});
+          }
+        }
+    return rows;
+  }
+
+  var DATA = (window.FORECAST_DATA && window.FORECAST_DATA.length) ? window.FORECAST_DATA : makeDemo();
+  var META = window.FORECAST_META || {updated:"demo data",
+    source:"demo data — replace forecast_data.js with your real output"};
+
+  var have=function(arr,key){var s={};DATA.forEach(function(r){s[r[key]]=1});
+    return arr.filter(function(x){return s[x];});};
+  COUNTIES=have(COUNTIES,"county"); EVENTS=have(EVENTS,"event");
+  var LEVELS = (META.levels && META.levels.length) ? META.levels : DEFAULT_LEVELS;
+  // keep only levels actually in the data, preserving given order
+  (function(){var s={};DATA.forEach(function(r){if(r.level)s[r.level]=1;});
+    var f=LEVELS.filter(function(l){return s[l.label];});
+    if(f.length) LEVELS=f;})();
+
+  var state={county:COUNTIES.indexOf("Providence")>=0?"Providence":COUNTIES[0],
+             event:EVENTS[0], level:LEVELS[0].label, sel:null};
+
+  document.getElementById("updated").innerHTML="Updated "+(META.updated||"\u2014");
+  document.getElementById("source").innerHTML="Data source: "+(META.source||"\u2014");
+
+  function mkButtons(host, items, getLabel, getActive, onPick, cls){
+    items.forEach(function(it){
+      var b=document.createElement("button"); if(cls) b.className=cls;
+      b.textContent=getLabel(it); b.setAttribute("aria-pressed", getActive(it));
+      b.onclick=function(){ onPick(it); };
+      host.appendChild(b);
+    });
+  }
+  var cEl=document.getElementById("counties");
+  mkButtons(cEl, COUNTIES, function(c){return c;}, function(c){return c===state.county;},
+    function(c){state.county=c;state.sel=null;render();}, "pill");
+  var eEl=document.getElementById("events");
+  mkButtons(eEl, EVENTS, function(e){return e;}, function(e){return e===state.event;},
+    function(e){state.event=e;state.sel=null;render();});
+  var lEl=document.getElementById("levels");
+  mkButtons(lEl, LEVELS, function(l){return l.label;}, function(l){return l.label===state.level;},
+    function(l){state.level=l.label;state.sel=null;render();});
+
+  function fmt(d){ var dt=new Date(d+"T00:00:00");
+    return dt.toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"}); }
+  function shortDay(d){ var dt=new Date(d+"T00:00:00");
+    return {w:dt.toLocaleDateString(undefined,{weekday:"short"}),
+            md:dt.toLocaleDateString(undefined,{month:"short",day:"numeric"})}; }
+  function colvar(risk){ return {"Low":"low","Moderate":"mod","High":"high","Very High":"vhigh"}[risk]; }
+
+  var WKLABEL=[["This week","most confident"],["Next week",""],
+               ["In 3 weeks","less certain"],["In 4 weeks","least certain"]];
+
+  function render(){
+    [].forEach.call(cEl.children,function(b){b.setAttribute("aria-pressed",b.textContent===state.county);});
+    [].forEach.call(eEl.children,function(b){b.setAttribute("aria-pressed",b.textContent===state.event);});
+    [].forEach.call(lEl.children,function(b){b.setAttribute("aria-pressed",b.textContent===state.level);});
+
+    var lv=LEVELS.filter(function(l){return l.label===state.level;})[0];
+    document.getElementById("levelNote").textContent =
+      lv && lv.note ? state.level+" \u2014 "+lv.note : "";
+
+    var rows=DATA.filter(function(r){return r.county===state.county && r.event===state.event &&
+                                            (r.level||LEVELS[0].label)===state.level;})
+                 .sort(function(a,b){return a.date<b.date?-1:1;});
+
+    var peak=rows.reduce(function(m,r){return (!m||r.chance>m.chance)?r:m;},null);
+    var hc=document.getElementById("headcard");
+    var pr=document.getElementById("peakRisk");
+    if(peak){
+      pr.textContent=peak.risk; hc.style.borderLeftColor="var(--"+colvar(peak.risk)+")";
+      document.getElementById("peakPct").textContent=Math.round(peak.chance)+"% chance \u00b7 "+fmt(peak.date);
+      var hi=rows.filter(function(r){return r.chance>=30;}).length;
+      document.getElementById("headSay").innerHTML=
+        "Over the next four weeks, "+state.county+" County's highest <b>"+state.event+
+        "</b> ("+state.level+") risk is <b>"+peak.risk.toLowerCase()+"</b>. "+
+        (hi? hi+" day"+(hi>1?"s":"")+" reach High or above." : "No High-risk days in this period.");
+    }else{ pr.textContent="\u2014"; document.getElementById("peakPct").textContent="";
+      document.getElementById("headSay").textContent="No forecast for this selection."; }
+    document.getElementById("headDef").textContent=DEFS[state.event]||"";
+
+    var cal=document.getElementById("calendar"); cal.innerHTML="";
+    for(var w=0; w*7<rows.length; w++){
+      var wk=document.createElement("div"); wk.className="week fade";
+      var lab=WKLABEL[w]||["Week "+(w+1),""];
+      var h=document.createElement("p"); h.className="wk";
+      h.innerHTML="<b>"+lab[0]+"</b>"+(lab[1]?" \u00b7 "+lab[1]:"");
+      wk.appendChild(h);
+      var g=document.createElement("div"); g.className="grid";
+      for(var i=0;i<7;i++){
+        var r=rows[w*7+i];
+        if(!r){ var e=document.createElement("div"); e.className="tile empty"; g.appendChild(e); continue; }
+        var t=document.createElement("button");
+        t.className="tile "+RISKCLASS[r.risk]+(state.sel===r.date?" sel":"");
+        var sd=shortDay(r.date);
+        t.innerHTML="<span class='d'>"+sd.w+" "+sd.md+"</span>"+
+                    "<span class='v'>"+Math.round(r.chance)+"%</span>"+
+                    "<span class='r'>"+r.risk+"</span>";
+        t.setAttribute("aria-label",fmt(r.date)+", "+Math.round(r.chance)+" percent chance, "+r.risk+" risk");
+        (function(rr,tile){ tile.onclick=function(){
+            state.sel=rr.date; showDetail(rr);
+            [].forEach.call(document.querySelectorAll(".tile"),function(x){x.classList.remove("sel");});
+            tile.classList.add("sel");
+          };})(r,t);
+        g.appendChild(t);
+      }
+      wk.appendChild(g); cal.appendChild(wk);
+    }
+    var d=document.getElementById("detail");
+    if(state.sel){ var rr=rows.filter(function(x){return x.date===state.sel;})[0];
+      if(rr) showDetail(rr); else { state.sel=null; d.textContent="Tap any day to see its details."; } }
+    else d.textContent="Tap any day to see its details.";
+  }
+
+  function showDetail(r){
+    document.getElementById("detail").innerHTML=
+      "<b>"+fmt(r.date)+"</b> \u2014 "+state.county+" County \u00b7 "+state.event+" ("+state.level+"): "+
+      "<b>"+Math.round(r.chance)+"%</b> of forecast scenarios reach an extreme day "+
+      "(<b>"+r.risk+"</b> risk).";
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+===============================================================================
+RHODE ISLAND COMPOUND EXTREME-WEATHER OUTLOOK  —  PROJECT SUMMARY
+===============================================================================
+Last updated: 2026-06-25
+
+-------------------------------------------------------------------------------
+1. GOAL
+-------------------------------------------------------------------------------
+A public, county-level web page that shows, for each of Rhode Island's five
+counties, the chance of an extreme COMPOUND weather day over the next four
+weeks, for three event types:
+
+    Hot & Humid   (hot day AND humid day)
+    Cold & Windy  (cold day AND windy day)
+    Cold & Wet    (cold day AND humid day)
+
+"Extreme" thresholds come from 20 years of local history using the Optimal Path
+Threshold (OPT) method (Zhao, Horvat & Gao, 2025, ERL 20 024048). The daily
+"chance" comes from a subseasonal ensemble forecast (CFSv2-METDATA): it is the
+share of ensemble members in which BOTH conditions cross the historical
+threshold on a given day. Chance is shown as Low / Moderate / High / Very High.
+
+Severity levels (occurrence rate of the historical threshold):
+    Notable = 5%    (uncommon,  ~18 days/year)
+    Severe  = 1%    (rare,      ~4 days/year)
+    Extreme = 0.5%  (very rare, ~2 days/year)
+
+-------------------------------------------------------------------------------
+2. VARIABLES AND UNITS
+-------------------------------------------------------------------------------
+Source variables (gridMET history and CFSv2-METDATA forecast):
+    tmmx  daily max temperature (K)
+    tmmn  daily min temperature (K)
+    vpd   mean vapor pressure deficit (kPa)   <-- replaces rmax/rmin, which the
+                                                   forecast dataset does NOT provide
+    vs    10 m wind speed (m/s)
+
+Derived / converted variables (used by OPT and the forecast):
+    tmmx_C, tmmn_C   temperature in Celsius (K - 273.15)
+    rh_mean          relative humidity (%), DERIVED from vpd + temperature:
+                       es(T)=0.6108*exp(17.27*T/(T+237.3))  [kPa, Tetens]
+                       es_mean=(es(Tmax)+es(Tmin))/2
+                       rh_mean=100*(1 - vpd/es_mean), clipped to [0,100]
+                     (RH is used, not VPD, because VPD is strongly correlated
+                      with temperature and would make the two OPT thresholds
+                      non-independent.)
+    vs_2m            2 m wind speed (FAO-56 Eq.47): vs_2m = vs * 0.74797
+
+Event definitions (variable, tail):
+    hot   = tmmx_C, high tail   (extreme = above threshold)
+    cold  = tmmn_C, LOW tail    (extreme = below threshold; smaller = more extreme)
+    wet   = rh_mean, high tail
+    windy = vs_2m, high tail
+
+-------------------------------------------------------------------------------
+3. THE PIPELINE  (scripts, in order)
+-------------------------------------------------------------------------------
+Run ONCE (historical side -> produces the static inputs committed to the repo):
+
+  (1) gridmet_ri_county_aggregate.py
+        Downloads gridMET daily tmmx,tmmn,vpd,vs for 2006-2025 (default mode
+        "opendap" streams only the RI window; "download" pulls full files).
+        Area-weight-aggregates to the 5 counties using the shapefile.
+        OUT: gridmet_csv/  (per county: date,FIPS,county,tmmx,tmmn,vpd,vs)
+
+  (2) convert_units.py
+        IN : gridmet_csv/
+        Converts K->C, derives rh_mean from vpd+T, converts 10m->2m wind.
+        OUT: gridmet_csv_converted/ (date,FIPS,county,tmmx_C,tmmn_C,rh_mean,vs_2m)
+
+  (3) opt_compound.py
+        IN : gridmet_csv_converted/
+        Runs the OPT method for hot_wet, cold_windy, cold_wet at 0.5%/1%/5%.
+        OUT: opt_compound_thresholds.csv   (the thresholds the web app uses)
+             opt_paths/                    (full OPT paths, optional/diagnostic)
+
+Run DAILY (forecast side -> refreshes the web data):
+
+  (4) download_s2s_forecast.py
+        Reads the THREDDS catalog.xml at run time, finds ALL ensemble members,
+        streams only the RI window + first 28 lead days, aggregates to counties.
+        OUT: s2s_forecast_csv/ (ensemble,lead_day,valid_date,FIPS,county,
+                                tmmx,tmmn,vpd,vs)
+
+  (5) convert_standardize_s2s.py
+        IN : s2s_forecast_csv/  (and gridmet_csv_converted/ for the climatology)
+        Same unit conversions as (2), plus z-score standardization vs the
+        historical climatology (seasonal, +/-15 day window).
+        OUT: s2s_forecast_processed/ (… tmmx_C,tmmn_C,rh_mean,vs_2m + *_z)
+
+  (6) community_forecast.py
+        IN : opt_compound_thresholds.csv  +  s2s_forecast_processed/
+        For each county/event/severity/day: chance = share of members crossing
+        BOTH thresholds; assigns Low/Moderate/High/Very High.
+        OUT: forecast_data.js        (the file the web page reads)
+             community_forecast.csv  (same data as a table)
+             forecast_<event>.png    (static calendars, Notable level)
+             community_summary.txt    (one plain sentence per county/event)
+
+Web page:
+
+  (7) index.html
+        Reads forecast_data.js and renders the interactive page (county pills,
+        event tabs, "How extreme?" selector, weekly risk calendar, plain-text
+        explainers). If forecast_data.js is absent it shows built-in DEMO data.
+
+NOTE on paths: every script has a CONFIG block at the top. The default paths
+line up if all scripts and folders sit in ONE directory (the repo root). If you
+move things, update the paths (SHP, IN_DIR, FCST_DIR, THRESH_CSV, OUT_DIR, etc.).
+
+-------------------------------------------------------------------------------
+4. CURRENT STATUS
+-------------------------------------------------------------------------------
+DONE:
+  - All seven components written and tested on synthetic data.
+  - Historical and forecast variable sets switched from rmax/rmin to vpd.
+  - Web page is community-friendly (plain language, 3 severity levels, mobile).
+NOT DONE YET (this is the FUTURE TASK below):
+  - Hosting on the web and the daily auto-update have NOT been set up.
+
+-------------------------------------------------------------------------------
+5. FUTURE TASK (FOR THE STUDENT): HOST + AUTO-UPDATE WITH GITHUB
+-------------------------------------------------------------------------------
+Plan: GitHub Pages serves the page for free; GitHub Actions re-runs the daily
+scripts each day, regenerates forecast_data.js, and commits it; Pages then
+redeploys automatically. Free for PUBLIC repositories (unlimited Actions
+minutes; private repos get ~2000 min/month, still enough).
+
+REPO LAYOUT (put everything in the repo root so default paths work):
+    your-repo/
+      index.html
+      forecast_data.js                 (will be overwritten daily; commit an
+                                         initial version so the page works)
+      download_s2s_forecast.py
+      convert_standardize_s2s.py
+      community_forecast.py
+      gridmet_ri_county_aggregate.py   (kept for reference / re-runs)
+      convert_units.py                 (kept for reference / re-runs)
+      opt_compound.py                  (kept for reference / re-runs)
+      opt_compound_thresholds.csv      (STATIC input, committed once)
+      gridmet_csv_converted/           (STATIC input: historical climatology)
+      rhode_island_counties/           (STATIC input: the shapefile, all parts)
+      requirements.txt
+      .github/workflows/daily.yml
+
+STEP-BY-STEP:
+  1. Create a PUBLIC GitHub repository and upload the layout above.
+     (daily.yml goes inside .github/workflows/)
+  2. Settings -> Pages -> Source = "Deploy from a branch" -> Branch: main, /(root).
+     The site will appear at:  https://<username>.github.io/<repo>/
+  3. Settings -> Actions -> General -> Workflow permissions -> "Read and write".
+     (lets the daily job commit the refreshed forecast_data.js)
+  4. Open the Actions tab -> select the workflow -> "Run workflow" once to test.
+     Confirm it finishes green and that forecast_data.js was updated/committed.
+  5. After that it runs automatically every day. Done.
+
+WHAT THE DAILY JOB DOES (daily.yml):
+    - cron "30 12 * * *"  = 12:30 UTC every day (about 7-8 AM US Eastern).
+    - installs requirements.txt
+    - runs:  download_s2s_forecast.py  ->  convert_standardize_s2s.py  ->
+             community_forecast.py
+    - commits forecast_data.js back to the repo (which triggers Pages rebuild).
+    - "workflow_dispatch" also allows manual runs from the Actions tab.
+
+THINGS TO KNOW (current GitHub behavior, verified 2026):
+    - Cron times are UTC only; no local timezone by default. Adjust the cron to
+      run AFTER the CFSv2-METDATA forecast updates for the day.
+    - Scheduled runs can be delayed 10-30 min at peak; not an issue here. We
+      deliberately did NOT schedule exactly on the hour.
+    - Scheduled workflows auto-DISABLE after 60 days of repo inactivity. Daily
+      commits keep the repo active, so this should not happen; just be aware.
+    - GitHub does not loudly alert on failures (only a default email to the
+      repo owner). Check the Actions tab occasionally; the green/red status is
+      the health signal.
+    - If the runner cannot reach the data server, in download_s2s_forecast.py
+      switch CATALOG_URL from the https host to the
+      "http://thredds.northwestknowledge.net:8080/..." version; the OPeNDAP URLs
+      follow the host automatically.
+
+OPTIONAL ENHANCEMENTS the student could add later:
+    - Re-run the historical side (steps 1-3) once a year to refresh thresholds
+      with new data, or extend the history beyond 20 years.
+    - A "build failed" notification (email/Slack) step in the workflow.
+    - A short banner on Extreme (0.5%) level explaining that all-low is normal
+      (rare events rarely show up in a small ensemble).
+
+-------------------------------------------------------------------------------
+6. WHAT TO SEND THE STUDENT (so the whole project is aligned)
+-------------------------------------------------------------------------------
+Send these files/folders (a single zip is easiest):
+
+  SCRIPTS (all six):
+    [ ] gridmet_ri_county_aggregate.py
+    [ ] convert_units.py
+    [ ] opt_compound.py
+    [ ] download_s2s_forecast.py
+    [ ] convert_standardize_s2s.py
+    [ ] community_forecast.py
+
+  WEB + DEPLOY:
+    [ ] index.html
+    [ ] daily.yml            (place at .github/workflows/daily.yml)
+    [ ] requirements.txt
+
+  STATIC INPUTS (so the daily job is turn-key; computed once from steps 1-3):
+    [ ] opt_compound_thresholds.csv
+    [ ] gridmet_csv_converted/         (all 5 county CSVs)
+    [ ] rhode_island_counties/         (shapefile: .shp,.shx,.dbf,.prj,.cpg)
+    [ ] forecast_data.js               (an initial copy, so the page works
+                                         before the first daily run)
+
+  DOCS:
+    [ ] this PROJECT_SUMMARY.txt
+
+If you prefer NOT to send the precomputed static inputs, send the shapefile and
+have the student regenerate them by running, once:
+    python gridmet_ri_county_aggregate.py
+    python convert_units.py
+    python opt_compound.py
+…which produces opt_compound_thresholds.csv and gridmet_csv_converted/.
+
+-------------------------------------------------------------------------------
+7. QUICK LOCAL PREVIEW (for the student, before deploying)
+-------------------------------------------------------------------------------
+Put index.html and forecast_data.js in the same folder, then:
+    python -m http.server 8000
+and open  http://localhost:8000  in a browser.
+(Double-clicking index.html may fall back to demo data, because browsers block
+local file:// scripts from loading forecast_data.js. The local server avoids
+this.)
+
+-------------------------------------------------------------------------------
+8. METHOD NOTES / CAVEATS (good to keep in mind)
+-------------------------------------------------------------------------------
+  - History is 2006-2025 (20 years). At the Severe/Extreme levels this is a
+    small sample; the Extreme (0.5%) chance is often 0 because few ensemble
+    members ever cross such a rare threshold. This is expected, not a bug.
+    Notable (5%) is the most informative level for a 4-week public outlook.
+  - The "chance" is the raw ensemble share (uncalibrated). Treat the first week
+    as most reliable; confidence fades with lead time (the calendar labels this).
+  - The forecast (cfsv2_metdata) is statistically downscaled to the gridMET
+    grid, so the historical absolute thresholds can be applied directly.
+  - Not an official warning product; for general public awareness.
+===============================================================================
