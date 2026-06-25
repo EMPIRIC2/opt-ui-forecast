@@ -29,7 +29,7 @@ jobs:
           python convert_standardize_s2s.py
           python community_forecast.py
 
-      - name: Publish refreshed data
+      - name: Publish updated data
         run: |
           git config user.name "forecast-bot"
           git config user.email "actions@users.noreply.github.com"
