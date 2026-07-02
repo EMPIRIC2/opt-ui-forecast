@@ -1,12 +1,16 @@
 name: Daily forecast update
 
-"on":
+on:
   schedule:
     - cron: "30 12 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: daily-forecast-update
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -21,7 +25,9 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
       - name: Build today's forecast
         run: |
@@ -29,10 +35,16 @@ jobs:
           python convert_standardize_s2s.py
           python community_forecast.py
 
-      - name: Publish updated data
+      - name: Publish refreshed data
         run: |
           git config user.name "forecast-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add forecast_data.js
-          git diff --staged --quiet || git commit -m "Daily forecast update $(date -u +%F)"
-          git push
+
+          git add forecast_data.js community_forecast.csv community_summary.txt forecast_*.png
+
+          if git diff --staged --quiet; then
+            echo "No forecast changes to commit."
+          else
+            git commit -m "Daily forecast update $(date -u +%F)"
+            git push
+          fi
