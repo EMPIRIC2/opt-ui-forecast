@@ -1,0 +1,17 @@
+Severity level shown: Notable
+
+Bristol — Cold & Wet: highest chance 0% on Jun 30 (Low). No high-risk days in this period.
+Bristol — Cold & Windy: highest chance 0% on Jun 30 (Low). No high-risk days in this period.
+Bristol — Hot & Humid: highest chance 6% on Jul 07 (Low). No high-risk days in this period.
+Kent — Cold & Wet: highest chance 0% on Jun 30 (Low). No high-risk days in this period.
+Kent — Cold & Windy: highest chance 0% on Jun 30 (Low). No high-risk days in this period.
+Kent — Hot & Humid: highest chance 10% on Jul 23 (Moderate). No high-risk days in this period.
+Newport — Cold & Wet: highest chance 0% on Jun 30 (Low). No high-risk days in this period.
+Newport — Cold & Windy: highest chance 0% on Jun 30 (Low). No high-risk days in this period.
+Newport — Hot & Humid: highest chance 6% on Jul 24 (Low). No high-risk days in this period.
+Providence — Cold & Wet: highest chance 0% on Jun 30 (Low). No high-risk days in this period.
+Providence — Cold & Windy: highest chance 0% on Jun 30 (Low). No high-risk days in this period.
+Providence — Hot & Humid: highest chance 6% on Jul 07 (Low). No high-risk days in this period.
+Washington — Cold & Wet: highest chance 0% on Jun 30 (Low). No high-risk days in this period.
+Washington — Cold & Windy: highest chance 0% on Jun 30 (Low). No high-risk days in this period.
+Washington — Hot & Humid: highest chance 10% on Jul 23 (Moderate). No high-risk days in this period.
