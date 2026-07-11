@@ -1,17 +1,17 @@
 Severity level shown: Notable
 
-Bristol — Cold & Wet: highest chance 0% on Jul 08 (Low). No high-risk days in this period.
-Bristol — Cold & Windy: highest chance 0% on Jul 08 (Low). No high-risk days in this period.
-Bristol — Hot & Humid: highest chance 12% on Aug 06 (Moderate). No high-risk days in this period.
-Kent — Cold & Wet: highest chance 0% on Jul 08 (Low). No high-risk days in this period.
-Kent — Cold & Windy: highest chance 0% on Jul 08 (Low). No high-risk days in this period.
-Kent — Hot & Humid: highest chance 19% on Aug 06 (Moderate). No high-risk days in this period.
-Newport — Cold & Wet: highest chance 0% on Jul 08 (Low). No high-risk days in this period.
-Newport — Cold & Windy: highest chance 0% on Jul 08 (Low). No high-risk days in this period.
+Bristol — Cold & Wet: highest chance 0% on Jul 09 (Low). No high-risk days in this period.
+Bristol — Cold & Windy: highest chance 0% on Jul 09 (Low). No high-risk days in this period.
+Bristol — Hot & Humid: highest chance 9% on Aug 06 (Low). No high-risk days in this period.
+Kent — Cold & Wet: highest chance 0% on Jul 09 (Low). No high-risk days in this period.
+Kent — Cold & Windy: highest chance 0% on Jul 09 (Low). No high-risk days in this period.
+Kent — Hot & Humid: highest chance 16% on Aug 06 (Moderate). No high-risk days in this period.
+Newport — Cold & Wet: highest chance 0% on Jul 09 (Low). No high-risk days in this period.
+Newport — Cold & Windy: highest chance 0% on Jul 09 (Low). No high-risk days in this period.
 Newport — Hot & Humid: highest chance 12% on Aug 06 (Moderate). No high-risk days in this period.
-Providence — Cold & Wet: highest chance 0% on Jul 08 (Low). No high-risk days in this period.
-Providence — Cold & Windy: highest chance 0% on Jul 08 (Low). No high-risk days in this period.
+Providence — Cold & Wet: highest chance 0% on Jul 09 (Low). No high-risk days in this period.
+Providence — Cold & Windy: highest chance 0% on Jul 09 (Low). No high-risk days in this period.
 Providence — Hot & Humid: highest chance 12% on Aug 06 (Moderate). No high-risk days in this period.
-Washington — Cold & Wet: highest chance 0% on Jul 08 (Low). No high-risk days in this period.
-Washington — Cold & Windy: highest chance 0% on Jul 08 (Low). No high-risk days in this period.
+Washington — Cold & Wet: highest chance 0% on Jul 09 (Low). No high-risk days in this period.
+Washington — Cold & Windy: highest chance 0% on Jul 09 (Low). No high-risk days in this period.
 Washington — Hot & Humid: highest chance 12% on Aug 06 (Moderate). No high-risk days in this period.
