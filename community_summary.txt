@@ -1,17 +1,17 @@
 Severity level shown: Notable
 
-Bristol — Cold & Wet: highest chance 0% on Jul 18 (Low). No high-risk days in this period.
-Bristol — Cold & Windy: highest chance 0% on Jul 18 (Low). No high-risk days in this period.
-Bristol — Hot & Humid: highest chance 8% on Jul 22 (Low). No high-risk days in this period.
-Kent — Cold & Wet: highest chance 0% on Jul 18 (Low). No high-risk days in this period.
-Kent — Cold & Windy: highest chance 0% on Jul 18 (Low). No high-risk days in this period.
-Kent — Hot & Humid: highest chance 29% on Jul 22 (Moderate). No high-risk days in this period.
-Newport — Cold & Wet: highest chance 0% on Jul 18 (Low). No high-risk days in this period.
-Newport — Cold & Windy: highest chance 0% on Jul 18 (Low). No high-risk days in this period.
-Newport — Hot & Humid: highest chance 17% on Jul 22 (Moderate). No high-risk days in this period.
-Providence — Cold & Wet: highest chance 0% on Jul 18 (Low). No high-risk days in this period.
-Providence — Cold & Windy: highest chance 0% on Jul 18 (Low). No high-risk days in this period.
-Providence — Hot & Humid: highest chance 38% on Jul 22 (High). Days to watch (High+): Jul 22.
-Washington — Cold & Wet: highest chance 0% on Jul 18 (Low). No high-risk days in this period.
-Washington — Cold & Windy: highest chance 0% on Jul 18 (Low). No high-risk days in this period.
-Washington — Hot & Humid: highest chance 33% on Jul 22 (High). Days to watch (High+): Jul 22.
+Bristol — Cold & Wet: highest chance 0% on Jul 19 (Low). No high-risk days in this period.
+Bristol — Cold & Windy: highest chance 0% on Jul 19 (Low). No high-risk days in this period.
+Bristol — Hot & Humid: highest chance 15% on Jul 22 (Moderate). No high-risk days in this period.
+Kent — Cold & Wet: highest chance 0% on Jul 19 (Low). No high-risk days in this period.
+Kent — Cold & Windy: highest chance 0% on Jul 19 (Low). No high-risk days in this period.
+Kent — Hot & Humid: highest chance 38% on Jul 22 (High). Days to watch (High+): Jul 22.
+Newport — Cold & Wet: highest chance 0% on Jul 19 (Low). No high-risk days in this period.
+Newport — Cold & Windy: highest chance 0% on Jul 19 (Low). No high-risk days in this period.
+Newport — Hot & Humid: highest chance 25% on Jul 22 (Moderate). No high-risk days in this period.
+Providence — Cold & Wet: highest chance 0% on Jul 19 (Low). No high-risk days in this period.
+Providence — Cold & Windy: highest chance 0% on Jul 19 (Low). No high-risk days in this period.
+Providence — Hot & Humid: highest chance 42% on Jul 22 (High). Days to watch (High+): Jul 22.
+Washington — Cold & Wet: highest chance 0% on Jul 19 (Low). No high-risk days in this period.
+Washington — Cold & Windy: highest chance 0% on Jul 19 (Low). No high-risk days in this period.
+Washington — Hot & Humid: highest chance 44% on Jul 22 (High). Days to watch (High+): Jul 22.
