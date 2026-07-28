@@ -1,0 +1,5 @@
+
+.DS_Store
+s2s_forecast_csv/
+s2s_forecast_processed/
+verification_forecasts/
