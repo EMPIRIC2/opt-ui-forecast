@@ -49,9 +49,16 @@ EVENTS = [
     {"name": "cold_wet",   "v1": ("cold", COLD, "low"),  "v2": ("wet",   WET,   "high")},
 ]
 
+NC_EVENTS = [
+    {"name": "hot",   "v1": ("hot",   HOT,   "high")},
+    {"name": "cold",  "v1": ("cold",  COLD,  "low")},
+    {"name": "wet",   "v1": ("wet",   WET,   "high")},
+    {"name": "windy", "v1": ("windy", WINDY, "high")},
+]
+
 # Target occurrence rates. You wrote 0.5% / 1% / 5% -> 0.005 / 0.01 / 0.05.
 # The PAPER uses per-mille (‰): for that use [0.0005, 0.001, 0.005] instead.
-TARGET_RATES = [0.005, 0.010, 0.050]
+TARGET_RATES = [0.025, 0.05, 0.075]
 
 PCT_MIN, PCT_MAX, STEP = 0.0, 100.0, 1.0  # grid level range for both variables
 MIN_DURATION = 1                          # min consecutive days per event
@@ -170,6 +177,21 @@ def run_pair(df, v1, v2, levels, targets, min_dur):
                       "reachable": bool(pmax >= pt)})
     return pd.DataFrame(picks), path_df
 
+# For non-compound events
+def run_single(df, v1, targets):
+    r1, col1, t1 = v1
+    x = df[col1].dropna().values
+    rows = []
+    for pt in targets:
+        pct = pt * 100.0 if t1 == "high" else 100.0 - pt * 100.0
+        thr = np.percentile(x, pct)
+        rows.append({"target_rate": pt, "achieved_p": pt,
+                     "v1_role": r1, "v1_col": col1, "v1_tail": t1,
+                     "v1_pct": pct, "v1_threshold": thr,
+                     "v2_role": "", "v2_col": "", "v2_tail": "",
+                     "v2_pct": np.nan, "v2_threshold": np.nan,
+                     "reachable": True})
+    return pd.DataFrame(rows)
 
 def main():
     levels = np.round(np.arange(PCT_MIN, PCT_MAX + 1e-9, STEP), 6)
@@ -202,6 +224,17 @@ def main():
                       f"{r['v1_role']} p{r['v1_pct']:g}={r['v1_threshold']:.2f}, "
                       f"{r['v2_role']} p{r['v2_pct']:g}={r['v2_threshold']:.2f} "
                       f"(got {r['achieved_p']*100:.3f}%)")
+
+        for ev in NC_EVENTS:
+            v1 = (ev["v1"][0], detect_col(df, ev["v1"][1]), ev["v1"][2])
+            picks = run_single(df, v1, TARGET_RATES)
+            picks.insert(0, "event", ev["name"])
+            picks.insert(0, "county", county)
+            summary.append(picks)
+            print(f"[{county}/{ev['name']}] {v1[0]}({v1[1]},{v1[2]})")
+            for _, r in picks.iterrows():
+                print(f"    {r['target_rate']*100:>5.2f}% -> "
+                      f"{r['v1_role']} p{r['v1_pct']:g}={r['v1_threshold']:.2f}")
 
     out = pd.concat(summary, ignore_index=True)
     out.to_csv(OUT_SUMMARY, index=False)

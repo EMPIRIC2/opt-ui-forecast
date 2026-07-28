@@ -55,15 +55,14 @@ OUT_DIR    = "."
 
 # occurrence rate -> (plain label, plain note). Order = most frequent first.
 SEVERITY_LEVELS = [
-    (0.05,  "Notable", "uncommon · about 18 days a year historically"),
-    (0.01,  "Severe",  "rare · about 4 days a year"),
-    (0.005, "Extreme", "very rare · about 2 days a year"),
+    (0.025,  "Notable", "uncommon · about 18 days a year historically"),
+    (0.05,  "Severe",  "rare · about 4 days a year"),
+    (0.075, "Extreme", "very rare · about 2 days a year"),
 ]
 PNG_SEVERITY = 0.05          # which level the static PNG/summary use
 
-EVENT_LABELS = {"hot_wet": "Hot & Humid",
-                "cold_windy": "Cold & Windy",
-                "cold_wet": "Cold & Wet"}
+EVENT_LABELS = {"hot_wet": "Hot & Humid", "cold_windy": "Cold & Windy", "cold_wet": "Cold & Wet",
+                "hot": "Hot", "cold": "Cold", "wet": "Wet", "windy": "Windy"}
 
 # risk bins: (upper bound %, label, color)
 RISK_BINS  = [(10, "Low", "#2f8f46"),
@@ -103,13 +102,19 @@ def compute():
             if level is None:          # threshold at a rate we don't expose
                 continue
             for date, g in f.groupby("valid_date"):
-                hit = (exceed(g[ev["v1_col"]].values, ev["v1_threshold"], ev["v1_tail"]) &
-                       exceed(g[ev["v2_col"]].values, ev["v2_threshold"], ev["v2_tail"]))
+                v1vals = g[ev["v1_col"]].values
+                # non compound
+                hit = exceed(v1vals, ev["v1_threshold"], ev["v1_tail"])
+                # compound
+                if isinstance(ev.get("v2_col"), str) and ev["v2_col"]:
+                    hit = hit & exceed(g[ev["v2_col"]].values, ev["v2_threshold"], ev["v2_tail"])
                 chance = round(100 * hit.mean(), 1)
                 rows.append(dict(county=county,
                                  event=EVENT_LABELS.get(ev["event"], ev["event"]),
                                  level=level, date=date,
-                                 chance_pct=chance, risk=risk_label(chance)))
+                                 chance_pct=chance, risk=risk_label(chance),
+                                 val1=round(float(np.mean(v1vals)), 2),
+                                 thr1=round(float(ev["v1_threshold"]), 2)))
     return pd.DataFrame(rows).sort_values(["event", "level", "county", "date"])
 
 
