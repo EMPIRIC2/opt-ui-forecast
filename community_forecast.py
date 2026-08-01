@@ -55,9 +55,9 @@ OUT_DIR    = "."
 
 # occurrence rate -> (plain label, plain note). Order = most frequent first.
 SEVERITY_LEVELS = [
-    (0.025,  "Notable", "uncommon · about 18 days a year historically"),
-    (0.05,  "Severe",  "rare · about 4 days a year"),
-    (0.075, "Extreme", "very rare · about 2 days a year"),
+    (0.05,  "Notable", "uncommon · about 18 days a year historically"),
+    (0.025, "Severe",  "rare · about 9 days a year historically"),
+    (0.01,  "Extreme", "very rare · about 4 days a year historically"),
 ]
 PNG_SEVERITY = 0.05          # which level the static PNG/summary use
 

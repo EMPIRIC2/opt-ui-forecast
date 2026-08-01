@@ -58,7 +58,7 @@ NC_EVENTS = [
 
 # Target occurrence rates. You wrote 0.5% / 1% / 5% -> 0.005 / 0.01 / 0.05.
 # The PAPER uses per-mille (‰): for that use [0.0005, 0.001, 0.005] instead.
-TARGET_RATES = [0.025, 0.05, 0.075]
+TARGET_RATES = [0.01, 0.025, 0.05]
 
 PCT_MIN, PCT_MAX, STEP = 0.0, 100.0, 1.0  # grid level range for both variables
 MIN_DURATION = 1                          # min consecutive days per event
