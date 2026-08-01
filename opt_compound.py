@@ -182,15 +182,30 @@ def run_single(df, v1, targets):
     r1, col1, t1 = v1
     x = df[col1].dropna().values
     rows = []
+
     for pt in targets:
-        pct = pt * 100.0 if t1 == "high" else 100.0 - pt * 100.0
+        # High-tail 2.5% event -> 97.5th percentile.
+        # Low-tail  2.5% event -> 2.5th percentile.
+        pct = 100.0 - pt * 100.0 if t1 == "high" else pt * 100.0
+
         thr = np.percentile(x, pct)
-        rows.append({"target_rate": pt, "achieved_p": pt,
-                     "v1_role": r1, "v1_col": col1, "v1_tail": t1,
-                     "v1_pct": pct, "v1_threshold": thr,
-                     "v2_role": "", "v2_col": "", "v2_tail": "",
-                     "v2_pct": np.nan, "v2_threshold": np.nan,
-                     "reachable": True})
+
+        rows.append({
+            "target_rate": pt,
+            "achieved_p": pt,
+            "v1_role": r1,
+            "v1_col": col1,
+            "v1_tail": t1,
+            "v1_pct": pct,
+            "v1_threshold": thr,
+            "v2_role": "",
+            "v2_col": "",
+            "v2_tail": "",
+            "v2_pct": np.nan,
+            "v2_threshold": np.nan,
+            "reachable": True,
+        })
+
     return pd.DataFrame(rows)
 
 def main():
