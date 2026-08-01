@@ -163,8 +163,20 @@
 (function(){
   "use strict";
   var COUNTIES=["Bristol","Kent","Newport","Providence","Washington"];
-  var EVENTS=["Hot & Humid","Cold & Windy","Cold & Wet"];
+  var EVENTS=[
+    "Hot",
+    "Cold",
+    "Wet",
+    "Windy",
+    "Hot & Humid",
+    "Cold & Windy",
+    "Cold & Wet"
+  ];
   var DEFS={
+    "Hot":"An unusually hot day.",
+    "Cold":"An unusually cold day.",
+    "Wet":"An unusually humid or wet day.",
+    "Windy":"An unusually windy day.",
     "Hot & Humid":"An unusually hot day that is also very humid.",
     "Cold & Windy":"An unusually cold day with strong winds.",
     "Cold & Wet":"An unusually cold day that is also very damp."

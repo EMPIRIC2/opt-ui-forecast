@@ -61,8 +61,15 @@ SEVERITY_LEVELS = [
 ]
 PNG_SEVERITY = 0.05          # which level the static PNG/summary use
 
-EVENT_LABELS = {"hot_wet": "Hot & Humid", "cold_windy": "Cold & Windy", "cold_wet": "Cold & Wet",
-                "hot": "Hot", "cold": "Cold", "wet": "Wet", "windy": "Windy"}
+EVENT_LABELS = {
+    "hot_wet": "Hot & Humid",
+    "cold_windy": "Cold & Windy",
+    "cold_wet": "Cold & Wet",
+    "hot": "Hot",
+    "cold": "Cold",
+    "wet": "Wet",
+    "windy": "Windy",
+}
 
 # risk bins: (upper bound %, label, color)
 RISK_BINS  = [(10, "Low", "#2f8f46"),
