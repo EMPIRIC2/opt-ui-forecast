@@ -1,37 +1,37 @@
 Severity level shown: Notable
 
-Bristol — Cold: highest chance 0% on Aug 06 (Low). No high-risk days in this period.
-Bristol — Cold & Wet: highest chance 0% on Aug 06 (Low). No high-risk days in this period.
-Bristol — Cold & Windy: highest chance 0% on Aug 06 (Low). No high-risk days in this period.
-Bristol — Hot: highest chance 100% on Aug 06 (Very High). Days to watch (High+): Aug 06, Aug 07, Aug 08, Aug 09, Aug 10, Aug 11, Aug 12, Aug 18, Aug 29.
-Bristol — Hot & Humid: highest chance 8% on Aug 13 (Low). No high-risk days in this period.
-Bristol — Wet: highest chance 10% on Aug 24 (Moderate). No high-risk days in this period.
-Bristol — Windy: highest chance 2% on Aug 24 (Low). No high-risk days in this period.
-Kent — Cold: highest chance 0% on Aug 06 (Low). No high-risk days in this period.
-Kent — Cold & Wet: highest chance 0% on Aug 06 (Low). No high-risk days in this period.
-Kent — Cold & Windy: highest chance 0% on Aug 06 (Low). No high-risk days in this period.
-Kent — Hot: highest chance 100% on Aug 06 (Very High). Days to watch (High+): Aug 06, Aug 07, Aug 08, Aug 09, Aug 10, Aug 11, Aug 12, Aug 29.
-Kent — Hot & Humid: highest chance 10% on Aug 16 (Moderate). No high-risk days in this period.
-Kent — Wet: highest chance 10% on Aug 24 (Moderate). No high-risk days in this period.
-Kent — Windy: highest chance 2% on Aug 24 (Low). No high-risk days in this period.
-Newport — Cold: highest chance 0% on Aug 06 (Low). No high-risk days in this period.
-Newport — Cold & Wet: highest chance 0% on Aug 06 (Low). No high-risk days in this period.
-Newport — Cold & Windy: highest chance 0% on Aug 06 (Low). No high-risk days in this period.
-Newport — Hot: highest chance 100% on Aug 06 (Very High). Days to watch (High+): Aug 06, Aug 07, Aug 08, Aug 09, Aug 10, Aug 11, Aug 12, Aug 18, Aug 28, Aug 29.
-Newport — Hot & Humid: highest chance 10% on Aug 17 (Moderate). No high-risk days in this period.
-Newport — Wet: highest chance 10% on Aug 24 (Moderate). No high-risk days in this period.
-Newport — Windy: highest chance 2% on Aug 24 (Low). No high-risk days in this period.
-Providence — Cold: highest chance 0% on Aug 06 (Low). No high-risk days in this period.
-Providence — Cold & Wet: highest chance 0% on Aug 06 (Low). No high-risk days in this period.
-Providence — Cold & Windy: highest chance 0% on Aug 06 (Low). No high-risk days in this period.
-Providence — Hot: highest chance 100% on Aug 06 (Very High). Days to watch (High+): Aug 06, Aug 07, Aug 08, Aug 09, Aug 10, Aug 11, Aug 29.
-Providence — Hot & Humid: highest chance 8% on Aug 16 (Low). No high-risk days in this period.
-Providence — Wet: highest chance 10% on Aug 24 (Moderate). No high-risk days in this period.
-Providence — Windy: highest chance 2% on Aug 24 (Low). No high-risk days in this period.
-Washington — Cold: highest chance 0% on Aug 06 (Low). No high-risk days in this period.
-Washington — Cold & Wet: highest chance 0% on Aug 06 (Low). No high-risk days in this period.
-Washington — Cold & Windy: highest chance 0% on Aug 06 (Low). No high-risk days in this period.
-Washington — Hot: highest chance 100% on Aug 06 (Very High). Days to watch (High+): Aug 06, Aug 07, Aug 08, Aug 09, Aug 10, Aug 11, Aug 12, Aug 18, Aug 28, Aug 29.
-Washington — Hot & Humid: highest chance 8% on Aug 16 (Low). No high-risk days in this period.
-Washington — Wet: highest chance 10% on Aug 24 (Moderate). No high-risk days in this period.
-Washington — Windy: highest chance 2% on Aug 24 (Low). No high-risk days in this period.
+Bristol — Cold: highest chance 0% on Aug 07 (Low). No high-risk days in this period.
+Bristol — Cold & Wet: highest chance 0% on Aug 07 (Low). No high-risk days in this period.
+Bristol — Cold & Windy: highest chance 0% on Aug 07 (Low). No high-risk days in this period.
+Bristol — Hot: highest chance 100% on Aug 07 (Very High). Days to watch (High+): Aug 07, Aug 08, Aug 09, Aug 10, Aug 11, Aug 12, Aug 29.
+Bristol — Hot & Humid: highest chance 10% on Aug 13 (Moderate). No high-risk days in this period.
+Bristol — Wet: highest chance 8% on Aug 16 (Low). No high-risk days in this period.
+Bristol — Windy: highest chance 2% on Aug 22 (Low). No high-risk days in this period.
+Kent — Cold: highest chance 0% on Aug 07 (Low). No high-risk days in this period.
+Kent — Cold & Wet: highest chance 0% on Aug 07 (Low). No high-risk days in this period.
+Kent — Cold & Windy: highest chance 0% on Aug 07 (Low). No high-risk days in this period.
+Kent — Hot: highest chance 100% on Aug 07 (Very High). Days to watch (High+): Aug 07, Aug 08, Aug 09, Aug 10, Aug 11, Aug 12, Aug 29.
+Kent — Hot & Humid: highest chance 8% on Aug 13 (Low). No high-risk days in this period.
+Kent — Wet: highest chance 12% on Aug 16 (Moderate). No high-risk days in this period.
+Kent — Windy: highest chance 2% on Aug 14 (Low). No high-risk days in this period.
+Newport — Cold: highest chance 0% on Aug 07 (Low). No high-risk days in this period.
+Newport — Cold & Wet: highest chance 0% on Aug 07 (Low). No high-risk days in this period.
+Newport — Cold & Windy: highest chance 0% on Aug 07 (Low). No high-risk days in this period.
+Newport — Hot: highest chance 100% on Aug 07 (Very High). Days to watch (High+): Aug 07, Aug 08, Aug 09, Aug 10, Aug 11, Aug 12, Aug 28, Aug 29, Aug 30.
+Newport — Hot & Humid: highest chance 12% on Aug 13 (Moderate). No high-risk days in this period.
+Newport — Wet: highest chance 10% on Aug 16 (Moderate). No high-risk days in this period.
+Newport — Windy: highest chance 0% on Aug 07 (Low). No high-risk days in this period.
+Providence — Cold: highest chance 0% on Aug 07 (Low). No high-risk days in this period.
+Providence — Cold & Wet: highest chance 0% on Aug 07 (Low). No high-risk days in this period.
+Providence — Cold & Windy: highest chance 0% on Aug 07 (Low). No high-risk days in this period.
+Providence — Hot: highest chance 100% on Aug 07 (Very High). Days to watch (High+): Aug 07, Aug 08, Aug 09, Aug 10, Aug 11, Aug 12, Aug 29.
+Providence — Hot & Humid: highest chance 15% on Aug 13 (Moderate). No high-risk days in this period.
+Providence — Wet: highest chance 19% on Aug 16 (Moderate). No high-risk days in this period.
+Providence — Windy: highest chance 2% on Aug 14 (Low). No high-risk days in this period.
+Washington — Cold: highest chance 0% on Aug 07 (Low). No high-risk days in this period.
+Washington — Cold & Wet: highest chance 0% on Aug 07 (Low). No high-risk days in this period.
+Washington — Cold & Windy: highest chance 0% on Aug 07 (Low). No high-risk days in this period.
+Washington — Hot: highest chance 100% on Aug 07 (Very High). Days to watch (High+): Aug 07, Aug 08, Aug 09, Aug 10, Aug 11, Aug 12, Aug 29, Aug 30.
+Washington — Hot & Humid: highest chance 8% on Aug 13 (Low). No high-risk days in this period.
+Washington — Wet: highest chance 17% on Aug 16 (Moderate). No high-risk days in this period.
+Washington — Windy: highest chance 0% on Aug 07 (Low). No high-risk days in this period.
