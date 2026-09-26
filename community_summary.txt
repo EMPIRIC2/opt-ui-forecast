@@ -1,37 +1,37 @@
 Severity level shown: Notable
 
-Bristol — Cold: highest chance 0% on Sep 24 (Low). No high-risk days in this period.
-Bristol — Cold & Wet: highest chance 4% on Oct 20 (Low). No high-risk days in this period.
-Bristol — Cold & Windy: highest chance 0% on Sep 24 (Low). No high-risk days in this period.
-Bristol — Hot: highest chance 0% on Sep 24 (Low). No high-risk days in this period.
-Bristol — Hot & Humid: highest chance 0% on Sep 24 (Low). No high-risk days in this period.
-Bristol — Wet: highest chance 33% on Sep 28 (High). Days to watch (High+): Sep 28.
-Bristol — Windy: highest chance 100% on Sep 24 (Very High). Days to watch (High+): Sep 24, Sep 25, Sep 26, Sep 27, Sep 28.
-Kent — Cold: highest chance 0% on Sep 24 (Low). No high-risk days in this period.
-Kent — Cold & Wet: highest chance 4% on Oct 20 (Low). No high-risk days in this period.
-Kent — Cold & Windy: highest chance 0% on Sep 24 (Low). No high-risk days in this period.
-Kent — Hot: highest chance 0% on Sep 24 (Low). No high-risk days in this period.
-Kent — Hot & Humid: highest chance 0% on Sep 24 (Low). No high-risk days in this period.
-Kent — Wet: highest chance 40% on Sep 28 (High). Days to watch (High+): Sep 28.
-Kent — Windy: highest chance 100% on Sep 24 (Very High). Days to watch (High+): Sep 24, Sep 25, Sep 26, Sep 27, Sep 28.
-Newport — Cold: highest chance 0% on Sep 24 (Low). No high-risk days in this period.
-Newport — Cold & Wet: highest chance 6% on Oct 20 (Low). No high-risk days in this period.
-Newport — Cold & Windy: highest chance 0% on Sep 24 (Low). No high-risk days in this period.
-Newport — Hot: highest chance 2% on Oct 10 (Low). No high-risk days in this period.
-Newport — Hot & Humid: highest chance 0% on Sep 24 (Low). No high-risk days in this period.
-Newport — Wet: highest chance 31% on Sep 28 (High). Days to watch (High+): Sep 28.
-Newport — Windy: highest chance 100% on Sep 24 (Very High). Days to watch (High+): Sep 24, Sep 25, Sep 26, Sep 27, Sep 28.
-Providence — Cold: highest chance 0% on Sep 24 (Low). No high-risk days in this period.
-Providence — Cold & Wet: highest chance 3% on Oct 22 (Low). No high-risk days in this period.
-Providence — Cold & Windy: highest chance 0% on Sep 24 (Low). No high-risk days in this period.
-Providence — Hot: highest chance 0% on Sep 24 (Low). No high-risk days in this period.
-Providence — Hot & Humid: highest chance 0% on Sep 24 (Low). No high-risk days in this period.
-Providence — Wet: highest chance 35% on Sep 28 (High). Days to watch (High+): Sep 28.
-Providence — Windy: highest chance 100% on Sep 24 (Very High). Days to watch (High+): Sep 24, Sep 25, Sep 26, Sep 27, Sep 28.
-Washington — Cold: highest chance 0% on Sep 24 (Low). No high-risk days in this period.
-Washington — Cold & Wet: highest chance 6% on Oct 20 (Low). No high-risk days in this period.
-Washington — Cold & Windy: highest chance 0% on Sep 24 (Low). No high-risk days in this period.
-Washington — Hot: highest chance 2% on Oct 10 (Low). No high-risk days in this period.
-Washington — Hot & Humid: highest chance 0% on Sep 24 (Low). No high-risk days in this period.
-Washington — Wet: highest chance 40% on Sep 28 (High). Days to watch (High+): Sep 28.
-Washington — Windy: highest chance 100% on Sep 24 (Very High). Days to watch (High+): Sep 24, Sep 25, Sep 26, Sep 27.
+Bristol — Cold: highest chance 0% on Sep 25 (Low). No high-risk days in this period.
+Bristol — Cold & Wet: highest chance 6% on Oct 20 (Low). No high-risk days in this period.
+Bristol — Cold & Windy: highest chance 0% on Sep 25 (Low). No high-risk days in this period.
+Bristol — Hot: highest chance 0% on Sep 25 (Low). No high-risk days in this period.
+Bristol — Hot & Humid: highest chance 0% on Sep 25 (Low). No high-risk days in this period.
+Bristol — Wet: highest chance 54% on Sep 28 (High). Days to watch (High+): Sep 28.
+Bristol — Windy: highest chance 100% on Sep 25 (Very High). Days to watch (High+): Sep 25, Sep 26, Sep 27, Sep 28.
+Kent — Cold: highest chance 0% on Sep 25 (Low). No high-risk days in this period.
+Kent — Cold & Wet: highest chance 8% on Oct 22 (Low). No high-risk days in this period.
+Kent — Cold & Windy: highest chance 0% on Sep 25 (Low). No high-risk days in this period.
+Kent — Hot: highest chance 0% on Sep 25 (Low). No high-risk days in this period.
+Kent — Hot & Humid: highest chance 0% on Sep 25 (Low). No high-risk days in this period.
+Kent — Wet: highest chance 67% on Sep 28 (Very High). Days to watch (High+): Sep 28.
+Kent — Windy: highest chance 100% on Sep 25 (Very High). Days to watch (High+): Sep 25, Sep 26, Sep 27, Sep 28.
+Newport — Cold: highest chance 0% on Sep 25 (Low). No high-risk days in this period.
+Newport — Cold & Wet: highest chance 8% on Oct 20 (Low). No high-risk days in this period.
+Newport — Cold & Windy: highest chance 0% on Sep 25 (Low). No high-risk days in this period.
+Newport — Hot: highest chance 2% on Oct 05 (Low). No high-risk days in this period.
+Newport — Hot & Humid: highest chance 0% on Sep 25 (Low). No high-risk days in this period.
+Newport — Wet: highest chance 48% on Sep 28 (High). Days to watch (High+): Sep 28.
+Newport — Windy: highest chance 100% on Sep 25 (Very High). Days to watch (High+): Sep 25, Sep 26, Sep 27, Sep 28.
+Providence — Cold: highest chance 0% on Sep 25 (Low). No high-risk days in this period.
+Providence — Cold & Wet: highest chance 8% on Oct 22 (Low). No high-risk days in this period.
+Providence — Cold & Windy: highest chance 0% on Sep 25 (Low). No high-risk days in this period.
+Providence — Hot: highest chance 2% on Oct 05 (Low). No high-risk days in this period.
+Providence — Hot & Humid: highest chance 0% on Sep 25 (Low). No high-risk days in this period.
+Providence — Wet: highest chance 62% on Sep 28 (Very High). Days to watch (High+): Sep 28.
+Providence — Windy: highest chance 100% on Sep 25 (Very High). Days to watch (High+): Sep 25, Sep 26, Sep 27, Sep 28.
+Washington — Cold: highest chance 0% on Sep 25 (Low). No high-risk days in this period.
+Washington — Cold & Wet: highest chance 8% on Oct 13 (Low). No high-risk days in this period.
+Washington — Cold & Windy: highest chance 0% on Sep 25 (Low). No high-risk days in this period.
+Washington — Hot: highest chance 2% on Oct 05 (Low). No high-risk days in this period.
+Washington — Hot & Humid: highest chance 0% on Sep 25 (Low). No high-risk days in this period.
+Washington — Wet: highest chance 67% on Sep 28 (Very High). Days to watch (High+): Sep 27, Sep 28.
+Washington — Windy: highest chance 100% on Sep 25 (Very High). Days to watch (High+): Sep 25, Sep 26, Sep 27, Sep 28.
