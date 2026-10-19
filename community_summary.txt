@@ -1,37 +1,37 @@
 Severity level shown: Notable
 
-Bristol — Cold: highest chance 0% on Oct 16 (Low). No high-risk days in this period.
-Bristol — Cold & Wet: highest chance 12% on Nov 02 (Moderate). No high-risk days in this period.
-Bristol — Cold & Windy: highest chance 0% on Oct 16 (Low). No high-risk days in this period.
-Bristol — Hot: highest chance 0% on Oct 16 (Low). No high-risk days in this period.
-Bristol — Hot & Humid: highest chance 0% on Oct 16 (Low). No high-risk days in this period.
-Bristol — Wet: highest chance 2% on Oct 26 (Low). No high-risk days in this period.
-Bristol — Windy: highest chance 28% on Oct 17 (Moderate). No high-risk days in this period.
-Kent — Cold: highest chance 0% on Oct 16 (Low). No high-risk days in this period.
-Kent — Cold & Wet: highest chance 12% on Nov 13 (Moderate). No high-risk days in this period.
-Kent — Cold & Windy: highest chance 0% on Oct 16 (Low). No high-risk days in this period.
-Kent — Hot: highest chance 0% on Oct 16 (Low). No high-risk days in this period.
-Kent — Hot & Humid: highest chance 0% on Oct 16 (Low). No high-risk days in this period.
-Kent — Wet: highest chance 2% on Oct 30 (Low). No high-risk days in this period.
-Kent — Windy: highest chance 28% on Oct 17 (Moderate). No high-risk days in this period.
-Newport — Cold: highest chance 0% on Oct 16 (Low). No high-risk days in this period.
-Newport — Cold & Wet: highest chance 12% on Nov 13 (Moderate). No high-risk days in this period.
-Newport — Cold & Windy: highest chance 0% on Oct 16 (Low). No high-risk days in this period.
-Newport — Hot: highest chance 0% on Oct 16 (Low). No high-risk days in this period.
-Newport — Hot & Humid: highest chance 0% on Oct 16 (Low). No high-risk days in this period.
-Newport — Wet: highest chance 2% on Oct 26 (Low). No high-risk days in this period.
-Newport — Windy: highest chance 28% on Oct 17 (Moderate). No high-risk days in this period.
-Providence — Cold: highest chance 0% on Oct 16 (Low). No high-risk days in this period.
-Providence — Cold & Wet: highest chance 12% on Nov 13 (Moderate). No high-risk days in this period.
-Providence — Cold & Windy: highest chance 2% on Nov 01 (Low). No high-risk days in this period.
-Providence — Hot: highest chance 0% on Oct 16 (Low). No high-risk days in this period.
-Providence — Hot & Humid: highest chance 0% on Oct 16 (Low). No high-risk days in this period.
-Providence — Wet: highest chance 4% on Nov 07 (Low). No high-risk days in this period.
-Providence — Windy: highest chance 34% on Oct 17 (High). Days to watch (High+): Oct 17.
-Washington — Cold: highest chance 0% on Oct 16 (Low). No high-risk days in this period.
-Washington — Cold & Wet: highest chance 12% on Nov 02 (Moderate). No high-risk days in this period.
-Washington — Cold & Windy: highest chance 0% on Oct 16 (Low). No high-risk days in this period.
-Washington — Hot: highest chance 0% on Oct 16 (Low). No high-risk days in this period.
-Washington — Hot & Humid: highest chance 0% on Oct 16 (Low). No high-risk days in this period.
-Washington — Wet: highest chance 2% on Oct 26 (Low). No high-risk days in this period.
-Washington — Windy: highest chance 28% on Oct 17 (Moderate). No high-risk days in this period.
+Bristol — Cold: highest chance 0% on Oct 18 (Low). No high-risk days in this period.
+Bristol — Cold & Wet: highest chance 10% on Oct 30 (Moderate). No high-risk days in this period.
+Bristol — Cold & Windy: highest chance 2% on Nov 13 (Low). No high-risk days in this period.
+Bristol — Hot: highest chance 0% on Oct 18 (Low). No high-risk days in this period.
+Bristol — Hot & Humid: highest chance 0% on Oct 18 (Low). No high-risk days in this period.
+Bristol — Wet: highest chance 6% on Nov 16 (Low). No high-risk days in this period.
+Bristol — Windy: highest chance 50% on Oct 20 (High). Days to watch (High+): Oct 20, Oct 21.
+Kent — Cold: highest chance 3% on Nov 15 (Low). No high-risk days in this period.
+Kent — Cold & Wet: highest chance 10% on Oct 30 (Moderate). No high-risk days in this period.
+Kent — Cold & Windy: highest chance 2% on Nov 13 (Low). No high-risk days in this period.
+Kent — Hot: highest chance 0% on Oct 18 (Low). No high-risk days in this period.
+Kent — Hot & Humid: highest chance 0% on Oct 18 (Low). No high-risk days in this period.
+Kent — Wet: highest chance 6% on Nov 16 (Low). No high-risk days in this period.
+Kent — Windy: highest chance 42% on Oct 20 (High). Days to watch (High+): Oct 20, Oct 21.
+Newport — Cold: highest chance 0% on Oct 18 (Low). No high-risk days in this period.
+Newport — Cold & Wet: highest chance 12% on Nov 16 (Moderate). No high-risk days in this period.
+Newport — Cold & Windy: highest chance 0% on Oct 18 (Low). No high-risk days in this period.
+Newport — Hot: highest chance 0% on Oct 18 (Low). No high-risk days in this period.
+Newport — Hot & Humid: highest chance 0% on Oct 18 (Low). No high-risk days in this period.
+Newport — Wet: highest chance 6% on Nov 16 (Low). No high-risk days in this period.
+Newport — Windy: highest chance 50% on Oct 20 (High). Days to watch (High+): Oct 20, Oct 21.
+Providence — Cold: highest chance 3% on Nov 15 (Low). No high-risk days in this period.
+Providence — Cold & Wet: highest chance 12% on Oct 30 (Moderate). No high-risk days in this period.
+Providence — Cold & Windy: highest chance 0% on Oct 18 (Low). No high-risk days in this period.
+Providence — Hot: highest chance 0% on Oct 18 (Low). No high-risk days in this period.
+Providence — Hot & Humid: highest chance 0% on Oct 18 (Low). No high-risk days in this period.
+Providence — Wet: highest chance 6% on Nov 16 (Low). No high-risk days in this period.
+Providence — Windy: highest chance 40% on Oct 20 (High). Days to watch (High+): Oct 20.
+Washington — Cold: highest chance 0% on Oct 18 (Low). No high-risk days in this period.
+Washington — Cold & Wet: highest chance 12% on Oct 30 (Moderate). No high-risk days in this period.
+Washington — Cold & Windy: highest chance 0% on Oct 18 (Low). No high-risk days in this period.
+Washington — Hot: highest chance 0% on Oct 18 (Low). No high-risk days in this period.
+Washington — Hot & Humid: highest chance 0% on Oct 18 (Low). No high-risk days in this period.
+Washington — Wet: highest chance 6% on Nov 16 (Low). No high-risk days in this period.
+Washington — Windy: highest chance 46% on Oct 20 (High). Days to watch (High+): Oct 20, Oct 21.
