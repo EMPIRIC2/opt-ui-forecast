@@ -1,37 +1,37 @@
 Severity level shown: Notable
 
-Bristol — Cold: highest chance 8% on Dec 07 (Low). No high-risk days in this period.
-Bristol — Cold & Wet: highest chance 94% on Nov 14 (Very High). Days to watch (High+): Nov 13, Nov 14, Nov 15, Nov 16.
+Bristol — Cold: highest chance 6% on Dec 11 (Low). No high-risk days in this period.
+Bristol — Cold & Wet: highest chance 98% on Nov 14 (Very High). Days to watch (High+): Nov 13, Nov 14, Nov 15, Nov 16.
 Bristol — Cold & Windy: highest chance 19% on Dec 10 (Moderate). No high-risk days in this period.
-Bristol — Hot: highest chance 0% on Nov 11 (Low). No high-risk days in this period.
-Bristol — Hot & Humid: highest chance 0% on Nov 11 (Low). No high-risk days in this period.
+Bristol — Hot: highest chance 0% on Nov 12 (Low). No high-risk days in this period.
+Bristol — Hot & Humid: highest chance 0% on Nov 12 (Low). No high-risk days in this period.
 Bristol — Wet: highest chance 52% on Nov 14 (High). Days to watch (High+): Nov 14.
-Bristol — Windy: highest chance 73% on Nov 13 (Very High). Days to watch (High+): Nov 13, Nov 27, Dec 10.
-Kent — Cold: highest chance 6% on Dec 07 (Low). No high-risk days in this period.
+Bristol — Windy: highest chance 81% on Nov 13 (Very High). Days to watch (High+): Nov 13.
+Kent — Cold: highest chance 12% on Dec 11 (Moderate). No high-risk days in this period.
 Kent — Cold & Wet: highest chance 98% on Nov 14 (Very High). Days to watch (High+): Nov 13, Nov 14, Nov 15, Nov 16.
-Kent — Cold & Windy: highest chance 19% on Dec 10 (Moderate). No high-risk days in this period.
-Kent — Hot: highest chance 0% on Nov 11 (Low). No high-risk days in this period.
-Kent — Hot & Humid: highest chance 0% on Nov 11 (Low). No high-risk days in this period.
+Kent — Cold & Windy: highest chance 16% on Dec 10 (Moderate). No high-risk days in this period.
+Kent — Hot: highest chance 0% on Nov 12 (Low). No high-risk days in this period.
+Kent — Hot & Humid: highest chance 0% on Nov 12 (Low). No high-risk days in this period.
 Kent — Wet: highest chance 40% on Nov 14 (High). Days to watch (High+): Nov 14.
-Kent — Windy: highest chance 77% on Nov 13 (Very High). Days to watch (High+): Nov 13.
-Newport — Cold: highest chance 8% on Dec 07 (Low). No high-risk days in this period.
-Newport — Cold & Wet: highest chance 94% on Nov 14 (Very High). Days to watch (High+): Nov 13, Nov 14, Nov 15, Nov 16, Nov 17.
-Newport — Cold & Windy: highest chance 19% on Dec 10 (Moderate). No high-risk days in this period.
-Newport — Hot: highest chance 0% on Nov 11 (Low). No high-risk days in this period.
-Newport — Hot & Humid: highest chance 0% on Nov 11 (Low). No high-risk days in this period.
-Newport — Wet: highest chance 38% on Nov 14 (High). Days to watch (High+): Nov 14.
-Newport — Windy: highest chance 69% on Nov 13 (Very High). Days to watch (High+): Nov 13.
-Providence — Cold: highest chance 6% on Dec 10 (Low). No high-risk days in this period.
-Providence — Cold & Wet: highest chance 94% on Nov 14 (Very High). Days to watch (High+): Nov 13, Nov 14, Nov 15, Nov 16, Nov 17, Nov 18.
+Kent — Windy: highest chance 88% on Nov 13 (Very High). Days to watch (High+): Nov 13.
+Newport — Cold: highest chance 4% on Dec 04 (Low). No high-risk days in this period.
+Newport — Cold & Wet: highest chance 98% on Nov 14 (Very High). Days to watch (High+): Nov 13, Nov 14, Nov 15, Nov 16, Nov 17.
+Newport — Cold & Windy: highest chance 16% on Dec 10 (Moderate). No high-risk days in this period.
+Newport — Hot: highest chance 0% on Nov 12 (Low). No high-risk days in this period.
+Newport — Hot & Humid: highest chance 0% on Nov 12 (Low). No high-risk days in this period.
+Newport — Wet: highest chance 33% on Nov 14 (High). Days to watch (High+): Nov 14.
+Newport — Windy: highest chance 72% on Nov 13 (Very High). Days to watch (High+): Nov 13.
+Providence — Cold: highest chance 12% on Dec 11 (Moderate). No high-risk days in this period.
+Providence — Cold & Wet: highest chance 98% on Nov 14 (Very High). Days to watch (High+): Nov 13, Nov 14, Nov 15, Nov 16, Nov 17, Nov 18.
 Providence — Cold & Windy: highest chance 19% on Dec 10 (Moderate). No high-risk days in this period.
-Providence — Hot: highest chance 0% on Nov 11 (Low). No high-risk days in this period.
-Providence — Hot & Humid: highest chance 0% on Nov 11 (Low). No high-risk days in this period.
-Providence — Wet: highest chance 35% on Nov 14 (High). Days to watch (High+): Nov 14.
-Providence — Windy: highest chance 79% on Nov 13 (Very High). Days to watch (High+): Nov 13.
-Washington — Cold: highest chance 8% on Dec 07 (Low). No high-risk days in this period.
-Washington — Cold & Wet: highest chance 96% on Nov 14 (Very High). Days to watch (High+): Nov 13, Nov 14, Nov 15, Nov 16, Nov 17, Nov 18.
-Washington — Cold & Windy: highest chance 19% on Dec 10 (Moderate). No high-risk days in this period.
-Washington — Hot: highest chance 0% on Nov 11 (Low). No high-risk days in this period.
-Washington — Hot & Humid: highest chance 0% on Nov 11 (Low). No high-risk days in this period.
-Washington — Wet: highest chance 40% on Nov 14 (High). Days to watch (High+): Nov 14.
-Washington — Windy: highest chance 67% on Nov 13 (Very High). Days to watch (High+): Nov 13.
+Providence — Hot: highest chance 0% on Nov 12 (Low). No high-risk days in this period.
+Providence — Hot & Humid: highest chance 0% on Nov 12 (Low). No high-risk days in this period.
+Providence — Wet: highest chance 38% on Nov 14 (High). Days to watch (High+): Nov 14.
+Providence — Windy: highest chance 91% on Nov 13 (Very High). Days to watch (High+): Nov 13.
+Washington — Cold: highest chance 4% on Dec 04 (Low). No high-risk days in this period.
+Washington — Cold & Wet: highest chance 98% on Nov 14 (Very High). Days to watch (High+): Nov 13, Nov 14, Nov 15, Nov 16, Nov 17.
+Washington — Cold & Windy: highest chance 16% on Dec 10 (Moderate). No high-risk days in this period.
+Washington — Hot: highest chance 0% on Nov 12 (Low). No high-risk days in this period.
+Washington — Hot & Humid: highest chance 0% on Nov 12 (Low). No high-risk days in this period.
+Washington — Wet: highest chance 42% on Nov 14 (High). Days to watch (High+): Nov 14.
+Washington — Windy: highest chance 72% on Nov 13 (Very High). Days to watch (High+): Nov 13.
